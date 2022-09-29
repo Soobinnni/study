@@ -1,0 +1,27 @@
+package sec01;
+
+public class PrivacyInfo {
+
+	public static void main(String[] args) {
+		//변수선언
+		String name;
+		int age;
+		String address;
+		String tel;
+		
+		//변수 초기화
+		name="김수빈";
+		age="25";
+		address="서울시강동구천호2동";
+		tel="01034230505";
+		
+		
+		//출력
+		System.out.println(개인신상정보 '\n');
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+	}
+
+}
