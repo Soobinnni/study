@@ -1,0 +1,20 @@
+package sec01;
+
+public class CastDemo {
+
+	public static void main(String[] args) {
+		int i;
+		double d;
+		byte b;
+		
+		i=7/4;
+		System.out.println(i);  //int는 정수만 인식하므로 정수 나누기 정수는 1로 인식//
+		
+		d=7/4;
+		System.out.println(d); 
+		
+		d=7/(double)4;
+		System.out.println(d);
+	}
+
+}

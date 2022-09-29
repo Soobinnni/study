@@ -1,0 +1,10 @@
+package sec01;
+
+public class Vardemo {
+	var a=1;
+
+	public static void main(String[] args) {
+		var x=456;
+	}
+
+}

@@ -1,0 +1,12 @@
+package sec01;
+
+public class ForcedType {
+
+	public static void main(String[] args) {
+		double f;
+		f=(float)3.14;
+		System.out.println(f);
+		
+	}
+
+}

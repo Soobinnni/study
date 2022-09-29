@@ -1,0 +1,16 @@
+
+public class VendingMachine {
+
+	public static void main(String[] args) {
+		System.out.println("★음료 자판기★");
+		System.out.print("1. 코카콜라(1000원)");
+		System.out.println("　　2. 환타(800원)");
+		System.out.print("3. 콜라체리맛(1100원)");
+		System.out.println("　4. 환타포도맛(800원)");
+		System.out.print("5. 칠성사이다(700원)");
+		System.out.println("　　6. 스프라이트(700원)");
+		System.out.print("7. 코코팜(600원)");
+		System.out.println("　8. 제주삼다수(300원)");
+	}
+
+}
