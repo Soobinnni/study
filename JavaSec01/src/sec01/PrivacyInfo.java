@@ -17,6 +17,7 @@ public class PrivacyInfo {
 		String tel;      //전화번호
 
 		// 변수 초기화
+		System.out.println("개인 신상정보 입력 프로그램");
 		System.out.print("이름을 입력하세요 : ");
 		name = input.nextLine();
 		System.out.print("나이를 입력하세요 : ");
@@ -27,6 +28,8 @@ public class PrivacyInfo {
 		tel = input.nextLine();
 
 		// 출력
+		System.out.println();
+		System.out.println("개인 정보 입력 결과");
 		System.out.println("\n개인신상정보\n"); //=("개인신상정보"+'\n')
 		System.out.println("이름 : " + name);
 		System.out.println("나이 : " + age + "세");
