@@ -1,4 +1,4 @@
-package n220930Understanding;
+package UnderstandingIncrease;
 
 import java.util.Scanner;
 

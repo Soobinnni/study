@@ -1,4 +1,4 @@
-package n220930;
+package PracticeProblem;
 import java.util.Scanner;
 
 public class Add {
