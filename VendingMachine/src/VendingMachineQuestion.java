@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class VendingMachine {
+public class VendingMachineQuestion {
 
 	public static void main(String[] args) {
 
@@ -51,15 +51,17 @@ public class VendingMachine {
 		System.out.println("금액을 투입하세요 : \n");
 		inputMoney=input.nextInt();
 		
+		
 		//사용자가 투입한 금액을 기준으로 조건문 작성
-		if(inputMoney>=300) { 
-			//투입금액이 300원보다 큰 경우 즉 true 실행문
+		//투입가격>=300 관계연산식이 true일 때
+		if(inputMoney>=300) {
+			//투입가격>=300 관계연산식이 true일 때 실행문
 			System.out.println("상품 번호를 입력하세요 : ");
-			selectProductNumber=input.nextInt(); //선택상품번호 입력
+			selectProductNumber=input.nextInt();
 			
 			//입력한 선택상품번호==n(n=1,2,3,4,5,6,7,8)이 t일 경우 선택상품번호에 해당되는 금액과 상품명의 값을 초기화
 			if (selectProductNumber==1) {
-				selectProductPrice=cokeOriginalPrice;
+				selectProductPrice=cokeOriginalPrice; 
 				selectProductName=cokeOriginal;
 			} else if(selectProductNumber==2) {
 				selectProductPrice=fantaOriginalPrice;
@@ -82,21 +84,21 @@ public class VendingMachine {
 			} else if (selectProductNumber==8) {
 				selectProductPrice=jejuSamdasuPrice;
 				selectProductName=jejuSamdasu;
+				
+				//else if 속에 중첩하여 if와 else를 사용했는데 출력이 안 되는 이유?
+				if (inputMoney>=selectProductPrice) {
+					System.out.println("상품 배출 : "+selectProductName);
+					System.out.println("잔금 배출 : "+(inputMoney-selectProductPrice));
+				} else {
+					System.out.println("상품의 가격보다 투입한 금액이 적습니다.");
+				}
+				
+				
 			} else { //입력한 선택상품번호==n(n=1,2,3,4,5,6,7,8)이 false일 경우
 				System.out.println("입력하신 번호는 없는 번호입니다. 1~8까지의 숫자를 입력해주세요.");
 			}
-				
-		} else { //투입금액이 300원보다 큰 경우 즉 true 실행문
+		} else { //투입가격>=300 관계연산식이 false일 때 실행문
 			System.out.println("금액을 더 투입해주세요. 최소 금액은 300원입니다.");
-		}
-		
-		
-		//투입한 금액>=선택상품가격의 관계식이 true일 경우 선택상품명과 잔금(투입가격-선택상품가격)을 출력
-		if (inputMoney>=selectProductPrice) {
-			System.out.println("상품 배출 : "+selectProductName);
-			System.out.println("잔금 배출 : "+(inputMoney-selectProductPrice));
-		} else { //투입한 금액>=선택상품가격의 관계식이 false일 경우 실행문 출력
-			System.out.println("상품의 가격보다 투입한 금액이 적습니다. "+(selectProductPrice-inputMoney)+"원 이상 투입해주세요.");
 		}
 	}
 
