@@ -32,7 +32,7 @@ public class VendingMachine {
 		
 		// 입력받을 변수 설정(투입 가격, 상품번호)
 		int inputMoney;
-		int inputProductNumber;
+		int selectProductNumber;
 
 		
 		// 노출되는 자판기 모습 출력
@@ -53,7 +53,7 @@ public class VendingMachine {
 		inputMoney = input.nextInt(); // 투입금액 입력
 
 		System.out.println("\t상품 번호를 입력하세요");
-		inputProductNumber = input.nextInt(); // 상품 번호 입력
+		selectProductNumber = input.nextInt(); // 상품 번호 입력
 
 		
 		
