@@ -21,7 +21,7 @@ public class ComputeBMI {
 		height=input.nextDouble();
 		
 		//조건문
-		if 
+		//if 
 	}
 
 }
