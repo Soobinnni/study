@@ -1,11 +1,9 @@
 package practiceProblem;
 
-public class GuessNumberOneTime {
+public class PrimeNumber {
 
 	public static void main(String[] args) {
-		
-		//정답
-		
+		// TODO Auto-generated method stub
 
 	}
 

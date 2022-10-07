@@ -94,4 +94,6 @@ public class FindTheArea {
 
 	}
 
+	/* 입력한 답변이 퀴즈의 숫자보다 작습니다. */
+
 }
