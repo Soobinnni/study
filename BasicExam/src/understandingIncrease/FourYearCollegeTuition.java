@@ -50,7 +50,19 @@ public class FourYearCollegeTuition {
 			//f일 때 출력
 			System.out.println("입학 등록금이 음수로 입력됐습니다. 양수로 다시 입력해주세요.");
 		}
+		
+		
+		
+		
+		
+		
+		/*
+		 * //결과 출력 종료의 여부를 물음 System.out.println("계속하여 다른 실린더의 부피를 구하시겠습니까? (Y/y)");
+		 * answer=inputAnser.nextLine();
+		 * 
+		 * }while(('y'==answer.charAt(0))||('Y'==answer.charAt(0)));
+		 */
 
-	}
+}
 
 }

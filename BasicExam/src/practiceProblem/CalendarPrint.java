@@ -14,26 +14,26 @@ public class CalendarPrint {
 		int month;
 		int firstDaysInJanuary;
 		int year;
-		
+
 		do {
 			System.out.println("연도를 입력해주세요 : (양수 입력)");
 			year = input.nextInt();
-			if(year>0) {
-				break;	
+			if (year > 0) {
+				break;
 			} else {
 				System.out.println("오류! 연도를 양수로 입력해주세요.\n");
 			}
-		}while(true);
-		
-		do{
+		} while (true);
+
+		do {
 			System.out.println("입력하신 연도의 1월 1일 요일을 입력해주세요\n요일 입력의 예는 일요일-1, 월요일-2, ... , 토요일-7입니다.");
 			firstDaysInJanuary = input.nextInt();
-			if((firstDaysInJanuary>=1)&&(firstDaysInJanuary<=7)) {
+			if ((firstDaysInJanuary >= 1) && (firstDaysInJanuary <= 7)) {
 				break;
 			} else {
 				System.out.println("오류! 수의 범위는 1부터 7 사이입니다.\n");
 			}
-		}while(true);
+		} while (true);
 
 		System.out.println("\n\n\n             [  " + year + "년 달력  ]\n");
 
@@ -115,10 +115,11 @@ public class CalendarPrint {
 				}
 			}
 			System.out.println("\n\n");
-			firstDaysInJanuary = ((firstDaysInJanuary+days)%7+7);
-			
-			if(firstDaysInJanuary>=8) {
-				firstDaysInJanuary=firstDaysInJanuary%7;
+			firstDaysInJanuary = ((firstDaysInJanuary + days) % 7 + 7);
+
+			if (firstDaysInJanuary >= 8) {
+				firstDaysInJanuary = firstDaysInJanuary % 7;
+
 			}
 		}
 
