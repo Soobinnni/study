@@ -41,6 +41,8 @@ public class RockPaperScissorsGame {
 		do {
 			// 게임을 새로 시작하면서 사용자 승리는 0으로, 총 게임 회수는 더해가고, 승리 시도 inGameNum은 1으로 초기화된다.
 			userVictory = 0;
+			draw=0;
+			computerVictory=0;
 			inGameNum = 1;
 			gameNum++;
 
