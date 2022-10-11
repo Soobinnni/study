@@ -1,4 +1,4 @@
-package understandingIncrease;
+package methodMakingUnderstandingIncrease;
 
 import java.util.Scanner;
 
