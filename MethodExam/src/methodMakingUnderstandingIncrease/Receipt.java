@@ -11,8 +11,6 @@ public class Receipt {
 		int price = 0; // 상품의 총액
 		int money = 0; // 받은 돈(고객이 지불한 금액)
 		int addMoney = 0; // 추가 지불금액
-		int change; // 거스름돈
-		double vat; // 부가세
 
 		String yesOrNo = "";
 		String reset;

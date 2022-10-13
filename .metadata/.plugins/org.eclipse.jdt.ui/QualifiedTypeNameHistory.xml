@@ -9,8 +9,13 @@
     <fullyQualifiedTypeName name="practiceProblem.TestScanner"/>
     <fullyQualifiedTypeName name="java.nio.file.FileSystems"/>
     <fullyQualifiedTypeName name="ForExam"/>
-    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="MethodMakingUnderstandingIncrease.FuelEconomyCalculation"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="CIrcle"/>
+    <fullyQualifiedTypeName name="Retangle"/>
+    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
+    <fullyQualifiedTypeName name="Employee"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="CellPhone"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
