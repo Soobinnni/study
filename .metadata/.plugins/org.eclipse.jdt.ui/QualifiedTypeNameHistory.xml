@@ -17,5 +17,8 @@
     <fullyQualifiedTypeName name="Employee"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="CellPhone"/>
+    <fullyQualifiedTypeName name="javax.print.attribute.SetOfIntegerSyntax"/>
+    <fullyQualifiedTypeName name="StudentArrayInput"/>
+    <fullyQualifiedTypeName name="ScoreInput"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>

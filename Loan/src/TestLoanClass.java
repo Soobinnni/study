@@ -44,5 +44,6 @@ public class TestLoanClass {
 		System.out.println("대출 날짜 시작 : " + customer.getLoanDate().toString() + "\n매월 상환 금액 : " + monthlyPayment
 				+ "\n총상환금액 : " + totalPayment);
 
+
 	}
 }
