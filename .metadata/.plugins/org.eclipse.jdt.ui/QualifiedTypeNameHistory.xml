@@ -21,4 +21,10 @@
     <fullyQualifiedTypeName name="StudentArrayInput"/>
     <fullyQualifiedTypeName name="ScoreInput"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+    <fullyQualifiedTypeName name="inflearn.RameunInfo"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="inflearn.LottoInflearn"/>
+    <fullyQualifiedTypeName name="Direction"/>
 </qualifiedTypeNameHistroy>
