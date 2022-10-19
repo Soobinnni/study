@@ -40,4 +40,5 @@
     <fullyQualifiedTypeName name="student.Postgraduate"/>
     <fullyQualifiedTypeName name="student.Undergraduate"/>
     <fullyQualifiedTypeName name="product.DiscountProduct"/>
+    <fullyQualifiedTypeName name="shap.Circle"/>
 </qualifiedTypeNameHistroy>
