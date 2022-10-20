@@ -31,14 +31,18 @@
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="Rectangle"/>
     <fullyQualifiedTypeName name="Magazine"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="Employee"/>
     <fullyQualifiedTypeName name="SalariedEmployee"/>
     <fullyQualifiedTypeName name="HourlyEmployee"/>
     <fullyQualifiedTypeName name="a.A"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="student.Postgraduate"/>
     <fullyQualifiedTypeName name="student.Undergraduate"/>
     <fullyQualifiedTypeName name="product.DiscountProduct"/>
     <fullyQualifiedTypeName name="shap.Circle"/>
+    <fullyQualifiedTypeName name="Book.SceinceFiction"/>
+    <fullyQualifiedTypeName name="Book.OverdueDays"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="person.ClassInfo"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
 </qualifiedTypeNameHistroy>
