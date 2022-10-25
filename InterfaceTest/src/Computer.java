@@ -6,11 +6,11 @@ public class Computer implements Controllable {
 		System.out.println("컴퓨터를 킨다.");
 
 	}
-
+	
 	@Override
 	public void turnOff() {
 		System.out.println("컴퓨터를 끈다.");
 
 	}
-
+	
 }

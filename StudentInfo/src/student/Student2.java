@@ -1,14 +1,14 @@
 package student;
 
-public class Student {
-	private String name; // 학생이름
-	private String address; //학생 주소
-	private String tel; //전화번호
-	private String grade; //학년
-	public Student() {
-		this("김용구","서울시","02472","3");
+public class Student2 {
+	private String name;
+	private String address;
+	private String tel;
+	private String grade;
+	public Student2() {
+		super();
 	}
-	public Student(String name, String address, String tel, String grade) {
+	public Student2(String name, String address, String tel, String grade) {
 		super();
 		this.name = name;
 		this.address = address;
@@ -39,17 +39,18 @@ public class Student {
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
-	@Override
-	public String toString() {
-		return "Student [getName()=" + getName() + ", getAddress()=" + getAddress() + ", getTel()=" + getTel()
-				+ ", getGrade()=" + getGrade() + "]";
-	}
-	
-	public void showStudentInfo() {
+	public void giveAList() {
+		System.out.println("~~~~~~~~~~~~~~~~~~~");
 		System.out.println("이름 : "+name);
 		System.out.println("주소 : "+address);
-		System.out.println("전화 : "+tel);
+		System.out.println("전화번호 : "+tel);
 		System.out.println("학년 : "+grade);
+		System.out.println("~~~~~~~~~~~~~~~~~~~");
+	}
+	@Override
+	public String toString() {
+		return "~~~~~~~~~~~~~~~~~~~"+"\n이름 : "+name+"\n주소 : "+address+
+				"\n전화번호 : "+tel+"\n학년 : "+grade+"~~~~~~~~~~~~~~~~~~~";
 	}
 	
 }
