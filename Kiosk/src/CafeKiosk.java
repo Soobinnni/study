@@ -144,7 +144,6 @@ public class CafeKiosk {
 				// 위에 선택들을 기준으로 담은 주문리스트의 가격의 총합을 호출해 total에 담는다.
 				// while문으로 반복됐을 떄 orderHistory가 total값을 가져감
 				total = total();
-				count++; // 주문번호
 			} catch (Exception e) {
 				System.out.println("잘못된 선택이 입력됐습니다.");
 				if (select == SelectCategory.PURCHASE) {
@@ -202,6 +201,7 @@ public class CafeKiosk {
 				break;
 			case 'y':
 			case 'Y':
+				count++; // 주문번호
 				returnWhile = false; // false로 만들어 반복문 자체를 나가고 결제가 완료된다.
 				break;
 			default:
