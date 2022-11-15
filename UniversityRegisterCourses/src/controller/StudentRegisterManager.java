@@ -7,7 +7,8 @@ import java.util.Scanner;
 import model.StudentVO;
 
 public class StudentRegisterManager {
-
+	
+	//학생등록
 	public void studentRegister() throws Exception {
 		Scanner input = new Scanner(System.in);
 
@@ -78,7 +79,7 @@ public class StudentRegisterManager {
 		System.out.println("\n등록 학생 정보");
 		std.getStudent(stvo.getSd_id(), stvo.getSd_passwd());
 	}
-
+	//학생정보수정
 	public void studentUpdate() throws Exception {
 		Scanner inputA = new Scanner(System.in);
 		Scanner inputB = new Scanner(System.in);
@@ -104,6 +105,9 @@ public class StudentRegisterManager {
 			System.out.print("\n비밀번호 : ");
 			pw = inputA.nextLine();
 			success = sdao.setStudentLogin(id, pw);
+			if (success) {
+				
+			}
 		} while (!success);
 		
 		//수정 시작
@@ -135,7 +139,7 @@ public class StudentRegisterManager {
 		sdao.getStudent(id, sdvo.getSd_passwd());
 		System.out.println();	
 	}
-
+	//학생목록
 	public void studentTotalList() throws Exception {
 		Scanner input = new Scanner(System.in);
 		StudentDAO sdao = new StudentDAO();
