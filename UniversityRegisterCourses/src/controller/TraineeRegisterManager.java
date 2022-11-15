@@ -17,16 +17,21 @@ public class TraineeRegisterManager {
 		String pw;
 		boolean success = false;
 		String sd_num;
-		
+		String reset;
+
 		do {
 			System.out.print("아이디를 입력하세요 : ");
 			id = input.nextLine();
 			System.out.print("\n비밀번호를 입력하세요 : ");
 			pw = input.nextLine();
 			success = sdao.setStudentLogin(id, pw);
-			if(!success) {
-				System.out.println("일치하지 않는 아이디 혹은 비밀번호가 있습니다. 다시 입력합니다.");
-			}
+			if (!success) {
+				System.out.println("일치하는 아이디 혹은 비밀번호가 없습니다. 다시 입력하시겠습니까 ? (y/n)");
+				reset = input.nextLine();
+				if ('n'==reset.charAt(0)||'N'==reset.charAt(0)) {
+					return;
+				}
+			}		
 		} while (!success);
 		//로그인 내용을 이용하여 학번을 가져온다.
 		sd_num=sdao.getStudentNum(id, pw);
@@ -48,6 +53,7 @@ public class TraineeRegisterManager {
 		String id;
 		String pw;
 		boolean success;
+		String reset;
 		
 		String sd_num; // 학생번호 StudentVO FK
 		String l_abbre; // 과목 약어 LessonVO FK
@@ -60,16 +66,20 @@ public class TraineeRegisterManager {
 
 		System.out.println("수강신청을 위한 정보 입력");
 		// 로그인 접속
-		do {
-			System.out.print("아이디 : ");
-			id = input.nextLine();
-			System.out.print("\n비밀번호 : ");
-			pw = input.nextLine();
-			success = sdao.setStudentLogin(id, pw);
-			if (!success) {
-				System.out.println("일치하는 아이디 혹은 비밀번호가 없습니다. 다시 입력합니다.\n");
-			}
-		} while (!success);
+			do {
+				System.out.print("아이디 : ");
+				id = input.nextLine();
+				System.out.print("\n비밀번호 : ");
+				pw = input.nextLine();
+				success = sdao.setStudentLogin(id, pw);
+				if (!success) {
+					System.out.println("일치하는 아이디 혹은 비밀번호가 없습니다. 다시 입력하시겠습니까 ? (y/n)");
+					reset = input.nextLine();
+					if ('n'==reset.charAt(0)||'N'==reset.charAt(0)) {
+						return;
+					}
+				}
+			} while (!success);
 		
 		//로그인 한 정보로 학생번호 가져오기
 		sd_num=sdao.getStudentNum(id, pw);
@@ -111,6 +121,8 @@ public class TraineeRegisterManager {
 		String id;
 		String pw;
 		boolean success=false;
+		String reset;
+
 		
 		System.out.println("수강취소를 위한 정보 입력");
 		// 로그인 접속
@@ -121,8 +133,11 @@ public class TraineeRegisterManager {
 			pw = input.nextLine();
 			success = sdao.setStudentLogin(id, pw);
 			if (!success) {
-				System.out.println();
-				System.out.println("일치하는 비밀번호 혹은 아이디가 없습니다. 다시 입력합니다.");
+				System.out.println("일치하는 아이디 혹은 비밀번호가 없습니다. 다시 입력하시겠습니까 ? (y/n)");
+				reset = input.nextLine();
+				if ('n'==reset.charAt(0)||'N'==reset.charAt(0)) {
+					return;
+				}
 			}
 		} while (!success);
 		//학번 가져오기
