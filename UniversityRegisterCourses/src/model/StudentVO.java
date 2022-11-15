@@ -1,6 +1,6 @@
 package model;
 
-public class StuedentVO {
+public class StudentVO {
 	private int no;// 일련번호/PK
 	private String sd_num;// 학번
 	private String sd_name;// 이름
@@ -13,11 +13,11 @@ public class StuedentVO {
 	private String sd_email;// 이메일
 	private String sd_date;// 등록일자
 
-	public StuedentVO() {
+	public StudentVO() {
 		super();
 	}
 
-	public StuedentVO(int no, String sd_num, String sd_name, String sd_id, String sd_passwd, String s_num,
+	public StudentVO(int no, String sd_num, String sd_name, String sd_id, String sd_passwd, String s_num,
 			String sd_birthday, String sd_phone, String sd_address, String sd_email, String sd_date) {
 		super();
 		this.no = no;
