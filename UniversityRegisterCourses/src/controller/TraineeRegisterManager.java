@@ -10,6 +10,8 @@ public class TraineeRegisterManager {
 	//수강신청 목록
 	public void traineeList() throws Exception {
 		Scanner input = new Scanner(System.in);
+		Scanner inputA = new Scanner(System.in);
+		
 		StudentDAO sdao = new StudentDAO();
 		TraineeDAO tdat = new TraineeDAO();
 		
@@ -17,21 +19,30 @@ public class TraineeRegisterManager {
 		String pw;
 		boolean success = false;
 		String sd_num;
+		
+		int count = 0; 
 		String reset;
 
 		do {
-			System.out.print("아이디를 입력하세요 : ");
+			System.out.println("로그인 시도 가능 회수("+count+"/3)");
+
+			count++;
+			System.out.print("아이디 : ");
 			id = input.nextLine();
-			System.out.print("\n비밀번호를 입력하세요 : ");
+			System.out.print("\n비밀번호 : ");
 			pw = input.nextLine();
 			success = sdao.setStudentLogin(id, pw);
 			if (!success) {
-				System.out.println("일치하는 아이디 혹은 비밀번호가 없습니다. 다시 입력하시겠습니까 ? (y/n)");
-				reset = input.nextLine();
-				if ('n'==reset.charAt(0)||'N'==reset.charAt(0)) {
+				if (count==3) {
+					System.out.println("로그인 시도 회수 초과로 메인화면으로 돌아갑니다.\n");
 					return;
 				}
-			}		
+				System.out.println("\n일치하는 아이디 혹은 비밀번호가 없습니다. 다시 입력하시겠습니까 ? (y/n)");
+				reset = inputA.nextLine();
+				if ('n'==reset.charAt(0)||'N'==reset.charAt(0)) {
+					return;
+				} 
+			}	
 		} while (!success);
 		//로그인 내용을 이용하여 학번을 가져온다.
 		sd_num=sdao.getStudentNum(id, pw);
@@ -44,6 +55,7 @@ public class TraineeRegisterManager {
 	public void traineeRegister() throws Exception {
 		// 스캐너
 		Scanner input = new Scanner(System.in);
+		Scanner inputA = new Scanner(System.in);
 
 		// 변수 선언 no, sd_num, l_abbre, t_section, t_date
 		tdao = new TraineeDAO();
@@ -53,6 +65,8 @@ public class TraineeRegisterManager {
 		String id;
 		String pw;
 		boolean success;
+		
+		int count = 0;
 		String reset;
 		
 		String sd_num; // 학생번호 StudentVO FK
@@ -67,17 +81,24 @@ public class TraineeRegisterManager {
 		System.out.println("수강신청을 위한 정보 입력");
 		// 로그인 접속
 			do {
+				System.out.println("로그인 시도 가능 회수("+count+"/3)");
+
+				count++;
 				System.out.print("아이디 : ");
 				id = input.nextLine();
 				System.out.print("\n비밀번호 : ");
 				pw = input.nextLine();
 				success = sdao.setStudentLogin(id, pw);
 				if (!success) {
-					System.out.println("일치하는 아이디 혹은 비밀번호가 없습니다. 다시 입력하시겠습니까 ? (y/n)");
-					reset = input.nextLine();
-					if ('n'==reset.charAt(0)||'N'==reset.charAt(0)) {
+					if (count==3) {
+						System.out.println("로그인 시도 회수 초과로 메인화면으로 돌아갑니다.\n");
 						return;
 					}
+					System.out.println("\n일치하는 아이디 혹은 비밀번호가 없습니다. 다시 입력하시겠습니까 ? (y/n)");
+					reset = inputA.nextLine();
+					if ('n'==reset.charAt(0)||'N'==reset.charAt(0)) {
+						return;
+					} 
 				}
 			} while (!success);
 		
@@ -112,6 +133,7 @@ public class TraineeRegisterManager {
 	//수강신청 취소
 	public void traineeDelete() throws Exception {
 		Scanner input = new Scanner(System.in);
+		Scanner inputA = new Scanner(System.in);
 		
 		TraineeDAO tdao = new TraineeDAO();
 		StudentDAO sdao = new StudentDAO();
@@ -121,25 +143,33 @@ public class TraineeRegisterManager {
 		String id;
 		String pw;
 		boolean success=false;
+		int count = 0; 
 		String reset;
 
 		
 		System.out.println("수강취소를 위한 정보 입력");
 		// 로그인 접속
 		do {
+			System.out.println("로그인 시도 가능 회수("+count+"/3)");
+
+			count++;
 			System.out.print("아이디 : ");
 			id = input.nextLine();
 			System.out.print("\n비밀번호 : ");
 			pw = input.nextLine();
 			success = sdao.setStudentLogin(id, pw);
 			if (!success) {
-				System.out.println("일치하는 아이디 혹은 비밀번호가 없습니다. 다시 입력하시겠습니까 ? (y/n)");
-				reset = input.nextLine();
-				if ('n'==reset.charAt(0)||'N'==reset.charAt(0)) {
+				if (count==3) {
+					System.out.println("로그인 시도 회수 초과로 메인화면으로 돌아갑니다.\n");
 					return;
 				}
+				System.out.println("\n일치하는 아이디 혹은 비밀번호가 없습니다. 다시 입력하시겠습니까 ? (y/n)");
+				reset = inputA.nextLine();
+				if ('n'==reset.charAt(0)||'N'==reset.charAt(0)) {
+					return;
+				} 
 			}
-		} while (!success);
+		} while ((!success));
 		//학번 가져오기
 		sd_num = sdao.getStudentNum(id, pw);
 		

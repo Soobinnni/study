@@ -98,18 +98,26 @@ public class StudentRegisterManager {
 		String sd_email;// 수정 이메일
 
 		String reset;
+		int count = 0;
 
 		System.out.println("학생 정보 수정");
 		// 로그인 접속
 		do {
+			System.out.println("로그인 시도 가능 회수(" + count + "/3)");
+
+			count++;
 			System.out.print("아이디 : ");
 			id = inputA.nextLine();
 			System.out.print("\n비밀번호 : ");
 			pw = inputA.nextLine();
 			success = sdao.setStudentLogin(id, pw);
 			if (!success) {
-				System.out.println("일치하는 아이디 혹은 비밀번호가 없습니다. 다시 입력하시겠습니까 ? (y/n)");
-				reset = inputA.nextLine();
+				if (count == 3) {
+					System.out.println("로그인 시도 회수 초과로 메인화면으로 돌아갑니다.\n");
+					return;
+				}
+				System.out.println("\n일치하는 아이디 혹은 비밀번호가 없습니다. 다시 입력하시겠습니까 ? (y/n)");
+				reset = inputB.nextLine();
 				if ('n' == reset.charAt(0) || 'N' == reset.charAt(0)) {
 					return;
 				}
@@ -149,25 +157,36 @@ public class StudentRegisterManager {
 	// 학생목록
 	public void studentTotalList() throws Exception {
 		Scanner input = new Scanner(System.in);
+		Scanner inputA = new Scanner(System.in);
 		StudentDAO sdao = new StudentDAO();
 
 		String pw;
 		String reset;
-
+		int count = 0;
 		System.out.println("학생 정보 전체 목록");
-		System.out.print("관리자 비밀번호 : ");
-		pw = input.nextLine();
-		if (pw.equals("soobin0617")) {
-			// sql문 실행
-			sdao.getStudentTotalList();
-		} else {
-			System.out.println("관리자 비밀번호가 틀립니다.");			
-			System.out.println("다시 입력하시겠습니까 ? (y/n)");
-			reset = input.nextLine();
-			if ('n'==reset.charAt(0)||'N'==reset.charAt(0)) {
-				return;
-			}
-		}
-	}
 
+		do {
+			System.out.println("\n로그인 시도 가능 회수(" + count + "/3)");
+
+			count++;
+			System.out.print("관리자 비밀번호 : ");
+			pw = input.nextLine();
+			if (pw.equals("soobin0617")) {
+				// sql문 실행
+				sdao.getStudentTotalList();
+			} else {
+				if (count == 3) {
+					System.out.println("로그인 시도 회수 초과로 메인화면으로 돌아갑니다.\n");
+					return;
+				}
+				System.out.println("\n관리자 비밀번호가 틀립니다.");
+				System.out.println("다시 입력하시겠습니까 ? (y/n)");
+				reset = input.nextLine();
+				if ('n' == reset.charAt(0) || 'N' == reset.charAt(0)) {
+					return;
+				}
+			}
+		} while (!(pw.equals("soobin0617")));
+
+	}
 }
