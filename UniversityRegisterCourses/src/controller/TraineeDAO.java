@@ -56,7 +56,6 @@ public class TraineeDAO {
 				}
 			}
 		}
-	// 수강신청
 	//수강신청하기
 	public void TraineeRegister(TraineeVO tvo) throws Exception {
 		//no, sd_num, l_abbre, t_section, t_date
@@ -92,7 +91,6 @@ public class TraineeDAO {
 			}
 		}
 	}
-	//수강신청 삭제
 	//수강신청 취소하기
 	public void TraineeDelete(int no) throws Exception {	
 		sql = "delete from trainee where no = ?";

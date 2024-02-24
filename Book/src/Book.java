@@ -1,17 +1,19 @@
-
 public class Book {
 	private String title; //제목
 	private int page; //페이지
 	private String author; //저자
+	
 	public Book() {
 		super();
 	}
+	
 	public Book(String title, int page, String author) {
 		super();
 		this.title = title;
 		this.page = page;
 		this.author = author;
 	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -34,5 +36,4 @@ public class Book {
 	public String toString() {
 		return " 제목 : " + getTitle() + " 페이지 수 : " + getPage() + " 저자 : " + getAuthor() + " ";
 	}
-	
 }
