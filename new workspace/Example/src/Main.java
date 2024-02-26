@@ -6,12 +6,12 @@ public class Main {
     static Scanner s = new Scanner(System.in);
 
     public static void main(String[] args) {
-//        Book b = new Book("제목", 1000, "한빛", "김수빈", 10, "32532");
-//
-//        System.out.println(b);
-//
-//        b.setTitle("새로 변경된 제목");
-//        System.out.println(b);
+        Book b = new Book("제목", 1000, "한빛", "김수빈", 10, "32532");
+
+        System.out.println(b);
+
+        b.setTitle("새로 변경된 제목");
+        System.out.println(b);
         printPersonArr(getPersonArr());
     }
 
