@@ -10,20 +10,20 @@ public class 사탕게임_3085 {
         br = new BufferedReader(new InputStreamReader(System.in));
         N = nextInt(br);
         candy = new char[N][N];
-        char[] candyR = new char[N];
-        char[] candyD = new char[N];
+//        char[] candyR = new char[N];
+//        char[] candyD = new char[N];
 
         // 배열 초기화
-        int d=0;
-        int r=0;
+//        int d=0;
+//        int r=0;
         for(int i=0;i<N;i++){
             String str = br.readLine();
             for(int j=0;j<N;j++){
                 char c=str.charAt(j);
                 candy[i][j] = c;
 
-                if(j==0) candyR[r++]=c;
-                if(i==0) candyD[d++] = c;
+//                if(j==0) candyR[r++]=c;
+//                if(i==0) candyD[d++] = c;
             }
         }
 
@@ -32,29 +32,26 @@ public class 사탕게임_3085 {
         // 열과 행 조사.
         // 아래쪽과 다른지 검사(열끼리)
         for(int i=0;i<N;i++){
-            char lastCandyR = candyR[i];
-            char lastCandyD = candyD[i];
+//            char lastCandyR = candyR[i];
+//            char lastCandyD = candyD[i];
 
-            for(int j=1;j<N;j++){
-                char compareCandyR = candy[i][j];
-                char compareCandyD = candy[j][i];
+            for(int j=0;j<N;j++){
+//                char compareCandyR = candy[i][j];
+//                char compareCandyD = candy[j][i];
 
-                if(compareCandyR!=lastCandyR) {
-                    switchCandyLeft(i,j);
+                if((j+1 < N) && candy[i][j]!=candy[i][j+1]) {
+                    swapCandy(i,j, i, j+1);
                     int count=candyCount();
-                    switchCandyLeft(i,j);
+                    swapCandy(i,j, i, j+1);
 
                     max = Math.max(count, max);
-                    lastCandyR = compareCandyR;
                 }
 
-                if(compareCandyD!=lastCandyD) {
-                    switchCandyAbove(j,i);
+                if((j+1 < N) && candy[j][i]!=candy[j+1][i]) {
+                    swapCandy(j,i, j+1, i);
                     int count=candyCount();
-                    switchCandyAbove(j,i);
-
+                    swapCandy(j,i, j+1, i);
                     max = Math.max(count, max);
-                    lastCandyD = compareCandyD;
                 }
             }
         }
@@ -62,21 +59,26 @@ public class 사탕게임_3085 {
         System.out.println(max);
     }
     static int candyCount(){
-        int a=countCandyLeft();
-        int b=countCandyAbove();
+        int a=countCandyR();
+        int b=countCandyD();
         return Math.max(a,b);
     }
-    static void switchCandyLeft(int r, int c){
+    static void swapCandy(int r, int c, int swapR, int swapC){
         char temp = candy[r][c];
-        candy[r][c]=candy[r][c-1];
-        candy[r][c-1]=temp;
+        candy[r][c]=candy[swapR][swapC];
+        candy[swapR][swapC]=temp;
     }
-    static void switchCandyAbove(int r, int c){
-        char temp = candy[r][c];
-        candy[r][c]=candy[r-1][c];
-        candy[r-1][c]=temp;
-    }
-    static int countCandyLeft(){
+//    static void switchCandyLeft(int r, int c){
+//        char temp = candy[r][c];
+//        candy[r][c]=candy[r][c-1];
+//        candy[r][c-1]=temp;
+//    }
+//    static void switchCandyAbove(int r, int c){
+//        char temp = candy[r][c];
+//        candy[r][c]=candy[r-1][c];
+//        candy[r-1][c]=temp;
+//    }
+    static int countCandyD(){
         int max=0;
         for(int i=0;i<N;i++){
             int count=1;
@@ -90,7 +92,7 @@ public class 사탕게임_3085 {
         }
         return max;
     }
-    static int countCandyAbove(){
+    static int countCandyR(){
         int max=0;
         for(int i=0;i<N;i++){
             int count=1;
