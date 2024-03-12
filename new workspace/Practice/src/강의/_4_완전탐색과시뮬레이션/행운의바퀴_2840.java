@@ -17,34 +17,39 @@ public class 행운의바퀴_2840 {
         boolean[] isDuplicate = new boolean[26];
 
         String[] wheel = new String[N];
-        st = new StringTokenizer(br.readLine());
-        st.nextToken();
-        String firstAlphabet=st.nextToken();
-        wheel[0] = firstAlphabet;
-        isDuplicate[firstAlphabet.charAt(0)-'A']=true;
+        Arrays.fill(wheel,"?");
+//        st = new StringTokenizer(br.readLine());
+//        st.nextToken();
+//        String firstAlphabet=st.nextToken();
+//        wheel[0] = firstAlphabet;
+//        isDuplicate[firstAlphabet.charAt(0)-'A']=true;
         int lastIdx = 0;
-
         boolean notAppropriate = false;
-        for (int i = 1; i < K; i++) {
+        for (int i = 0; i < K; i++) {
             st = new StringTokenizer(br.readLine());
-            int move = Integer.parseInt(st.nextToken()) % N;
+//            int move = Integer.parseInt(st.nextToken()) % N;
+            int move = Integer.parseInt(st.nextToken());
             String alphabet = st.nextToken();
-            int nextIdx = 0;
-            if (lastIdx < move) {
-                nextIdx = lastIdx;
-                while (move-- >= 0) {
-                    if (nextIdx-- == 0) {
-                        move--;
-                        nextIdx = N - 1;
-                    }
-                }
-            } else {
-                nextIdx = lastIdx - move;
+            int nextIdx = lastIdx;
+            for(int m=0;m<move;m++){
+                nextIdx--;
+                if(nextIdx<0) nextIdx = N - 1;
             }
+//            if (lastIdx < move) {
+//                nextIdx = lastIdx;
+//                while (move-- >= 0) {
+//                    if (nextIdx-- == 0) {
+//                        move--;
+//                        nextIdx = N - 1;
+//                    }
+//                }
+//            } else {
+//                nextIdx = lastIdx - move;
+//            }
 
             // 내 자리에 누가 있는데 알파벳이 같지 않을 때
             String a = wheel[nextIdx];
-            if (a != null && !alphabet.equals(a)) {
+            if (!a.equals("?") && !alphabet.equals(a)) {
                 notAppropriate = true;
                 break;
             }
@@ -58,24 +63,29 @@ public class 행운의바퀴_2840 {
             wheel[nextIdx] = alphabet;
             lastIdx = nextIdx;
         }
+        br.close();
 
         // 최종 출력
         if (notAppropriate) {
             System.out.println("!");
         } else {
-            int move = N;
-            while (move-- >= 0) {
-                String element = wheel[lastIdx];
-                if (element == null) {
-                    sb.append('?');
-                } else {
-                    sb.append(element);
-                }
-                if (lastIdx++ == N - 1) {
-                    move--;
-                    lastIdx = 0;
-                }
+            for(int m=0;m<N;m++){
+                sb.append(wheel[lastIdx]);
+                if(lastIdx++ == N - 1) lastIdx=0;
             }
+//            int move = N;
+//            while (move-- >= 0) {
+//                sb.append(wheel[lastIdx]);
+////                if (element == null) {
+////                    sb.append('?');
+////                } else {
+////                    sb.append(element);
+////                }
+//                if (lastIdx++ == N - 1) {
+//                    move--;
+//                    lastIdx = 0;
+//                }
+//            }
             System.out.println(sb);
         }
     }
