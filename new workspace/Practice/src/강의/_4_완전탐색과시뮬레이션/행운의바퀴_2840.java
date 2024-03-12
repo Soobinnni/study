@@ -17,7 +17,7 @@ public class 행운의바퀴_2840 {
         boolean[] isDuplicate = new boolean[26];
 
         String[] wheel = new String[N];
-        Arrays.fill(wheel,"?");
+        Arrays.fill(wheel, "?");
 //        st = new StringTokenizer(br.readLine());
 //        st.nextToken();
 //        String firstAlphabet=st.nextToken();
@@ -30,11 +30,12 @@ public class 행운의바퀴_2840 {
 //            int move = Integer.parseInt(st.nextToken()) % N;
             int move = Integer.parseInt(st.nextToken());
             String alphabet = st.nextToken();
-            int nextIdx = lastIdx;
-            for(int m=0;m<move;m++){
-                nextIdx--;
-                if(nextIdx<0) nextIdx = N - 1;
-            }
+            int nextIdx = ((lastIdx-move) % N + N) % N;
+//            int nextIdx = lastIdx ;
+//            for (int m = 0; m < move; m++) {
+//                nextIdx--;
+//                if (nextIdx < 0) nextIdx = N - 1;
+//            }
 //            if (lastIdx < move) {
 //                nextIdx = lastIdx;
 //                while (move-- >= 0) {
@@ -69,9 +70,9 @@ public class 행운의바퀴_2840 {
         if (notAppropriate) {
             System.out.println("!");
         } else {
-            for(int m=0;m<N;m++){
-                sb.append(wheel[lastIdx]);
-                if(lastIdx++ == N - 1) lastIdx=0;
+            for (int m = 0; m < N; m++) {
+                sb.append(wheel[(lastIdx + m) % N]);
+//                if(lastIdx++ == N - 1) lastIdx=0;
             }
 //            int move = N;
 //            while (move-- >= 0) {
